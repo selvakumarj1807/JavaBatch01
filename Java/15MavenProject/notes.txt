@@ -1,0 +1,139 @@
+What is Maven?
+--------------
+Maven is a Build Automation and Project Management Tool used mainly for Java projects.
+
+It helps developers:
+--------------------
+    1. Manage project dependencies (libraries/JAR files)
+    2. Compile source code
+    3. Run tests
+    4. Package applications (JAR/WAR)
+    5. Generate project documentation
+    6. Build and deploy applications
+
+Instead of manually downloading JAR files and configuring the classpath, 
+Maven automatically downloads required libraries from repositories.
+
+Why do we use Maven?
+--------------------
+Without Maven, you would manually:
+----------------------------------
+    1. Download JAR files (MySQL connector, Spring, etc.)
+
+    2. Add them to your project’s classpath.
+
+    3. Compile Java files manually.
+
+    4. Create JAR/WAR files manually.
+
+    5. Handle different library versions yourself.
+
+Maven automates all of this with a single configuration file called pom.xml.
+
+Where Do We Use Maven?
+----------------------
+Maven is used in Java projects to manage dependencies, automate builds, run tests, 
+and package applications.
+
+    1. Core Java Applications
+
+    2. JDBC Projects
+
+    3. Servlet Projects
+
+    4. JSP Projects
+
+    5. Spring Framework Projects
+
+    6. Spring Boot Projects
+
+    7. Hibernate Projects
+
+    8. Testing Projects
+
+    9. Enterprise Applications
+
+Maven Project Structure
+-----------------------
+A standard Maven project looks like this:
+-----------------------------------------
+
+The Heart of Maven: pom.xml
+---------------------------
+The POM (Project Object Model) file contains all project information.
+
+Example pom.xml
+---------------
+Important Elements
+------------------
+
+Element	- Meaning
+-----------------
+groupId	- Organization or package name (e.g., com.example)
+
+artifactId	- Project name (e.g., demo)
+
+version	- Project version
+
+dependencies - External libraries required by the project
+
+How Maven Works (Lifecycle)
+---------------------------
+Maven follows a build lifecycle. The most common phases are:
+------------------------------------------------------------
+Phase  -  Purpose
+-----------------
+validate - Check project structure and configuration.
+
+compile	- Compile Java source code.
+
+test - Run unit tests.
+
+package	- Create JAR/WAR file.
+
+install	- Install artifact into local Maven repository.
+
+deploy - Upload artifact to a remote repository.
+
+Common Maven Commands
+----------------------
+mvn compile → Compiles the project.
+
+mvn test → Runs tests.
+
+mvn package → Creates a JAR/WAR in the target/ folder.
+
+mvn clean → Deletes the target/ folder.
+
+mvn clean package → Cleans and builds the project again.
+
+mvn exec:java -Dexec.mainClass="com.example.App" → Runs a Java main class (with exec plugin).
+
+
+-- To Run Depandency
+--------------------
+write int your pom.xml File.
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+
+-- Run Commands
+---------------
+
+mvn clean
+
+mvn compile
+
+mvn exec:java "-Dexec.mainClass=com.example.App"
+
+Create Maven Project
+--------------------
+
+mvn archetype:generate ^
+-DgroupId=com.example ^
+-DartifactId=demo ^
+-DarchetypeArtifactId=maven-archetype-quickstart ^
+-DinteractiveMode=false
