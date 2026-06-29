@@ -42,6 +42,20 @@ public class CourseServlet extends HttpServlet {
 		
 		String action = request.getParameter("action");
 		
+		if ("edit".equals(action)) {
+			int courseid = Integer.parseInt(request.getParameter("courseid"));
+			
+			Course course = dao.getCourseById(courseid);
+			
+			request.setAttribute("course", course);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("edit.jsp");
+			
+			rd.forward(request, response);
+			
+			return;
+		}
+		
 		if (action != null && action.equals("delete")) {
 			int courseid = Integer.parseInt(request.getParameter("courseid"));
 			
@@ -84,6 +98,10 @@ public class CourseServlet extends HttpServlet {
 			response.sendRedirect("CourseServlet");
 		} else {
 			course.setCourseid(Integer.parseInt(courseid));
+			
+			dao.updateCourse(course);
+			
+			response.sendRedirect("CourseServlet");
 		}
 		
 	}

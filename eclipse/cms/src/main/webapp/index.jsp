@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="add.jsp" style="color: white; font-size: 17px;">Add
+            <a class="nav-link active" aria-current="page" href="index.jsp" style="color: white; font-size: 17px;">Add
               Course</a>
           </li>
           <li class="nav-item">
